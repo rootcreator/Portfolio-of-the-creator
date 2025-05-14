@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cesar | MVP Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 0 20px;
+}
+
+header.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background-color: #fff;
+}
+
+header.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+header.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.services ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.services li {
+  margin-bottom: 10px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+a {
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.calendly-embed {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  header.hero h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
+
+  </style>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>I build MVPs that scale</h1>
+    <p>Django | Flutter | SaaS Systems | Automation</p>
+    <a href="#contact" class="cta-button">Work With Me</a>
+  </header>  <!-- Services Section -->  <section class="services">
+    <h2>What I Do</h2>
+    <ul>
+      <li><strong>Web & Mobile Apps:</strong> Full-stack development with Django & Flutter</li>
+      <li><strong>SaaS MVPs:</strong> Fast, lean, production-ready launches</li>
+      <li><strong>Integrations:</strong> APIs, automation, payment systems</li>
+    </ul>
+  </section>  <!-- Portfolio Section -->
+<section class="portfolio">
+  <h2>Selected Projects</h2>
+
+  <!-- Project: BorderCash -->
+  <div class="project">
+    <img src="images/bordercash.png" alt="BorderCash Screenshot" style="width:100%; height:320px; border-radius: 8px; margin-bottom: 10px;" />
+    <h3>BorderCash</h3>
+    <p><strong>Problem:</strong> Expensive, slow cross-border transfers in Africa.  
+    <br><strong>Solution:</strong> A fintech MVP built with Django and Stellar for fast, low-fee USDC transfers.</p>
+    <p><strong>Tech Stack:</strong> Django, Celery, Redis, Stellar SDK, PostgreSQL, Wazuh</p>
+    <p>
+      <a href="https://bordercash.com" target="_blank">View Demo</a> |
+      <a href="https://github.com/rootcreator/bordercash" target="_blank">View Code</a>
+    </p>
+  </div>
+
+  <!-- Project: Job Bot -->
+  <div class="project">
+    <img src="images/jobbot.png" alt="Job Bot Screenshot" style="width:100%;
+        height:320px;
+        border-radius: 8px; margin-bottom: 10px;" />
+    <h3>Job Bot</h3>
+    <p><strong>Problem:</strong> Finding remote jobs is hard for Nigerians due to noise and scam listings.  
+    <br><strong>Solution:</strong> A Telegram/Slack bot that scrapes and recommends vetted job listings using filters + AI.</p>
+    <p><strong>Tech Stack:</strong> Python, BeautifulSoup, OpenAI, Telegram API, Django REST</p>
+    <p>
+      <a href="https://github.com/rootcreator/jobbot" target="_blank">View Code</a> |
+      <a href="https://youtu.be/demo-link-jobbot" target="_blank">Watch Demo</a>
+    </p>
+  </div>
+
+ 
+</section>  <!-- About Section -->  <section class="about">
+    <h2>About Me</h2>
+    <p>I’m Marcel, a developer and founder of Pluggedspace. I specialize in building scalable MVPs, automation systems, and high-impact tools using Django, Flutter, and AI integrations.</p>
+  </section>  <!-- Contact Section -->  <section class="contact" id="contact">
+    <h2>Let's Talk</h2>
+    <div class="calendly-embed">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/rootcreator/new-meeting" style="min-width:320px;height:320px;"></div>
+    </div>
+    <p>GitHub: <a href="https://github.com/rootcreator" target="_blank">@rootcreator</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/rootcreator" target="_blank">rootcreator</a></p>
+    <p>X: <a href="https://x.com/rootcr8tor" target="_blank">rootcreator</a></p>
+  </section>  <footer>
+    <p>© 2025 RootCreator | Built with HTML, CSS & JS</p>
+  </footer>
+</body>
+</html>
