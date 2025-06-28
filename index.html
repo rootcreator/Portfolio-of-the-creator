@@ -1,173 +1,786 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cesar | MVP Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #4361ee;
+      --primary-dark: #3a56d4;
+      --secondary: #3f37c9;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+      --success: #4cc9f0;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-  padding: 0 20px;
-}
-
-header.hero {
-  text-align: center;
-  padding: 80px 20px 40px;
-  background-color: #fff;
-}
-
-header.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-header.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #0056b3;
-}
-
-section {
-  max-width: 800px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.services ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.services li {
-  margin-bottom: 10px;
-}
-
-.project {
-  margin-bottom: 20px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-a {
-  color: #007bff;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.calendly-embed {
-  text-align: center;
-  margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-  header.hero h1 {
-    font-size: 2rem;
-  }
-
-  section {
-    padding: 20px;
-  }
-}
-
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header.hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header.hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+      opacity: 0.5;
+    }
+    
+    header.hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    header.hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    header.hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 14px 32px;
+      background-color: white;
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+      border: 2px solid transparent;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      background-color: var(--light);
+      color: var(--primary-dark);
+    }
+    
+    .cta-button.secondary {
+      background-color: transparent;
+      color: white;
+      border-color: rgba(255, 255, 255, 0.3);
+      margin-left: 15px;
+    }
+    
+    .cta-button.secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+    
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    
+    section:nth-child(even) {
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+    
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      border: 1px solid var(--light-gray);
+    }
+    
+    section:nth-child(even) .service-card {
+      background: var(--light);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    
+    .service-card p {
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+    
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      border: 1px solid var(--light-gray);
+    }
+    
+    section:nth-child(even) .project-card {
+      background: var(--light);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .project-image::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    }
+    
+    .project-content {
+      padding: 25px;
+    }
+    
+    .project-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    
+    .project-content .problem {
+      color: var(--gray);
+      margin-bottom: 15px;
+      font-style: italic;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .project-content .problem::before {
+      content: "❝";
+      position: absolute;
+      left: 0;
+      top: -5px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    
+    .project-content .solution {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .tech-tag {
+      background-color: var(--light-gray);
+      color: var(--dark);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .project-link:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    /* About */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    
+    .about-image {
+      background: var(--light-gray);
+      border-radius: var(--border-radius);
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .skills {
+      margin-top: 30px;
+    }
+    
+    .skill-item {
+      margin-bottom: 15px;
+    }
+    
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    
+    .skill-bar {
+      height: 8px;
+      background-color: var(--light-gray);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--success));
+      border-radius: 4px;
+    }
+    
+    /* Contact */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .social-link:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-link:hover {
+      color: var(--success);
+    }
+    
+    .copyright {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .about-content,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        order: -1;
+        height: 300px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header.hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      header.hero p {
+        font-size: 1.1rem;
+      }
+      
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .cta-button.secondary {
+        margin-left: 0;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-image {
+        height: 180px;
+      }
+    }
   </style>
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
   <!-- Hero Section -->
   <header class="hero">
-    <h1>I build MVPs that scale</h1>
-    <p>Django | Flutter | SaaS Systems | Automation</p>
-    <a href="#contact" class="cta-button">Work With Me</a>
-  </header>  <!-- Services Section -->  <section class="services">
-    <h2>What I Do</h2>
-    <ul>
-      <li><strong>Web & Mobile Apps:</strong> Full-stack development with Django & Flutter</li>
-      <li><strong>SaaS MVPs:</strong> Fast, lean, production-ready launches</li>
-      <li><strong>Integrations:</strong> APIs, automation, payment systems</li>
-    </ul>
-  </section>  <!-- Portfolio Section -->
-<section class="portfolio">
-  <h2>Selected Projects</h2>
-
-  <!-- Project: BorderCash -->
-  <div class="project">
-    <img src="/images/bordercash.jpg" alt="BorderCash Screenshot" style="width:100%; height:320px; border-radius: 8px; margin-bottom: 10px;" />
-    <h3>BorderCash</h3>
-    <p><strong>Problem:</strong> Expensive, slow cross-border transfers in Africa.  
-    <br><strong>Solution:</strong> A fintech MVP built with Django and Stellar for fast, low-fee USDC transfers.</p>
-    <p><strong>Tech Stack:</strong> Django, Celery, Redis, Stellar SDK, PostgreSQL, Wazuh</p>
-    <p>
-      <a href="https://border.cash" target="_blank">View Demo</a> |
-      <a href="https://github.com/rootcreator/bordercash" target="_blank">View Code</a>
-    </p>
-  </div>
-
-  <!-- Project: Job Bot -->
-  <div class="project">
-    <img src="/images/jobbot.jpg" alt="Job Bot Screenshot" style="width:100%;
-        height:320px;
-        border-radius: 8px; margin-bottom: 10px;" />
-    <h3>Job Bot</h3>
-    <p><strong>Problem:</strong> Finding remote jobs is hard for Nigerians due to noise and scam listings.  
-    <br><strong>Solution:</strong> A Telegram/Slack bot that scrapes and recommends vetted job listings using filters + AI.</p>
-    <p><strong>Tech Stack:</strong> Python, BeautifulSoup, OpenAI, Telegram API, Django REST</p>
-    <p>
-      <a href="https://t.me/jobautobot" target="_blank">View Code</a> |
-      <a href="https://youtu.be/demo-link-jobbot" target="_blank">Watch Demo</a>
-    </p>
-  </div>
-
- 
-</section>  <!-- About Section -->  <section class="about">
-    <h2>About Me</h2>
-    <p>I’m Marcel, a developer and founder of Pluggedspace. I specialize in building scalable MVPs, automation systems, and high-impact tools using Django, Flutter, and AI integrations.</p>
-  </section>  <!-- Contact Section -->  <section class="contact" id="contact">
-    <h2>Let's Talk</h2>
-    <div class="calendly-embed">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/rootcreator/new-meeting" style="min-width:320px;height:320px;"></div>
+    <div class="container">
+      <h1>I Build MVPs That Scale</h1>
+      <p>Full-stack developer specializing in Django and Flutter for fast, scalable SaaS applications and automation systems</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="cta-button">Work With Me</a>
+        <a href="#portfolio" class="cta-button secondary">View My Work</a>
+      </div>
     </div>
-    <p>GitHub: <a href="https://github.com/rootcreator" target="_blank">@rootcreator</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/rootcreator" target="_blank">rootcreator</a></p>
-    <p>X: <a href="https://x.com/rootcr8tor" target="_blank">rootcreator</a></p>
-  </section>  <footer>
-    <p>© 2025 RootCreator | Built with HTML, CSS & JS</p>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>What I Do</h2>
+        <p>I help startups and entrepreneurs turn their ideas into functional, scalable products</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Web & Mobile Apps</h3>
+          <p>Full-stack development with Django & Flutter for responsive web and cross-platform mobile applications.</p>
+          <p>From simple prototypes to complex systems with authentication, databases, and APIs.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>SaaS MVPs</h3>
+          <p>Fast, lean, production-ready launches that validate your business idea without unnecessary features.</p>
+          <p>Focus on core functionality with clean, maintainable code that's ready to scale.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Integrations & Automation</h3>
+          <p>APIs, payment systems, and workflow automation to streamline your business processes.</p>
+          <p>Custom solutions that connect your tools and eliminate manual work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>Selected Projects</h2>
+        <p>Here are some of my recent projects that demonstrate my skills and approach</p>
+      </div>
+      
+      <div class="portfolio-grid">
+        <!-- Project: BorderCash -->
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+          </div>
+          <div class="project-content">
+            <h3>BorderCash</h3>
+            <p class="problem">Expensive, slow cross-border transfers in Africa</p>
+            <p class="solution">A fintech MVP built with Django and Stellar for fast, low-fee USDC transfers between African countries. Implemented KYC verification, transaction monitoring, and fraud detection.</p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">Celery</span>
+              <span class="tech-tag">Redis</span>
+              <span class="tech-tag">Stellar SDK</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Wazuh</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://border.cash" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/rootcreator/bordercash" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+       
+               <div class="project-card">
+          <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+          </div>
+          <div class="project-content">
+            <h3>Progress Tracker</h3>
+            <p class="problem">Expensive, slow cross-border transfers in Africa</p>
+            <p class="solution">A fintech MVP built with Django and Stellar for fast, low-fee USDC transfers between African countries. Implemented KYC verification, transaction monitoring, and fraud detection.</p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">Javascript</span>
+              
+            </div>
+            
+            <div class="project-links">
+              <a href="https://rootcreator.github.io/portfolio-progress-tracker/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/rootcreator/bordercash" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+       
+       
+       
+        
+        
+        <!-- Project: Job Bot -->
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+          </div>
+          <div class="project-content">
+            <h3>Job Bot</h3>
+            <p class="problem">Finding remote jobs is hard for Nigerians due to noise and scam listings</p>
+            <p class="solution">A Telegram/Slack bot that scrapes and recommends vetted job listings using custom filters and AI ranking. Processes 500+ listings daily with 90% accuracy.</p>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">BeautifulSoup</span>
+              <span class="tech-tag">OpenAI</span>
+              <span class="tech-tag">Telegram API</span>
+              <span class="tech-tag">Django REST</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://t.me/jobautobot" target="_blank" class="project-link">
+                <i class="fab fa-telegram"></i> Try Bot
+              </a>
+              <a href="https://youtu.be/demo-link-jobbot" target="_blank" class="project-link">
+                <i class="fab fa-youtube"></i> Watch Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>My journey in software development and what drives me to build great products</p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm Marcel, a developer and founder of Pluggedspace with over 5 years of experience building web and mobile applications. I specialize in creating MVPs that are not just prototypes, but production-ready systems that can scale with your business.</p>
+          
+          <p>My approach combines technical expertise with product thinking - I don't just write code, I solve business problems. Whether you need a complete SaaS platform, a mobile app, or automation to streamline your operations, I can help you build it right the first time.</p>
+          
+          <div class="skills">
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Django/Python</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Flutter/Dart</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>API Development</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Let's Talk</h2>
+        <p>Ready to discuss your project? Book a call or reach out through my social profiles</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div>
+              <h3>Schedule a Call</h3>
+              <p>Let's discuss your project requirements and how I can help</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3>Email Me</h3>
+              <p>cesar@pluggedspace.org</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3>Location</h3>
+              <p>Lagos, Nigeria (Working remotely worldwide)</p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://github.com/rootcreator" target="_blank" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/rootcreator" target="_blank" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://x.com/rootcr8tor" target="_blank" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://t.me/rootcreator" target="_blank" class="social-link">
+              <i class="fab fa-telegram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="calendly-embed">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/rootcreator/new-meeting" style="min-width:320px;height:600px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#portfolio" class="footer-link">Work</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+        <p class="copyright">© 2025 RootCreator. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
